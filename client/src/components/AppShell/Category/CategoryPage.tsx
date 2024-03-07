@@ -118,7 +118,14 @@ function CategoryPage() {
                   />
                 )}
               </Box>
-              <Box sx={{ flex: 1, display: "flex", flexWrap: "wrap" }}>
+              <Box
+                sx={{
+                  flex: 1,
+                  display: "flex",
+                  flexWrap: "wrap",
+                  flexDirection: "column",
+                }}
+              >
                 <Box>
                   <Typography variant="h5" fontWeight={900}>
                     {book.title}
@@ -127,13 +134,14 @@ function CategoryPage() {
                     {book.authors[0]?.name || "Unknown Author"}
                   </Typography>
                 </Box>
-                <Button
-                  variant="outlined"
-                  sx={{ mt: "auto" }}
-                  onClick={() => handleBookAdd(book)}
-                >
-                  Add to reading list
-                </Button>
+                <Box sx={{ mt: "auto" }}>
+                  <Button
+                    variant="outlined"
+                    onClick={() => handleBookAdd(book)}
+                  >
+                    Add to reading list
+                  </Button>
+                </Box>
               </Box>
             </Box>
           ))}
