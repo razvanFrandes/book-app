@@ -133,6 +133,9 @@ function CategoryPage() {
                   <Typography sx={{ color: "#7d7d7d" }}>
                     {book.authors[0]?.name || "Unknown Author"}
                   </Typography>
+                  <Typography sx={{ color: "#7d7d7d" }}>
+                    {book.first_publish_year || ""}
+                  </Typography>
                 </Box>
                 <Box sx={{ mt: "auto" }}>
                   <Button

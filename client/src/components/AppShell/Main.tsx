@@ -65,7 +65,8 @@ function Main() {
                               transition: "transform 0.2s",
                               width: "200px",
                               height: "200px",
-                              padding: "12px",
+                              padding: "12px",                              
+                              transform: "scale(1.05)",
                               backgroundColor: colorGenerator(
                                 category.color,
                                 index
