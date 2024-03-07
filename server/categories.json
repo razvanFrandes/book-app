@@ -1,0 +1,374 @@
+[
+  {
+    "category": "Arts",
+    "slug": "arts",
+    "color": "#F87171",
+    "subcategories": [
+      {
+        "title": "Architecture",
+        "slug": "architecture"
+      },
+      {
+        "title": "Art Instruction",
+        "slug": "art_instruction"
+      },
+      {
+        "title": "Art History",
+        "slug": "art_history"
+      },
+      {
+        "title": "Dance",
+        "slug": "dance"
+      },
+      {
+        "title": "Design",
+        "slug": "design"
+      },
+      {
+        "title": "Fashion",
+        "slug": "fashion"
+      },
+      {
+        "title": "Film",
+        "slug": "film"
+      },
+      {
+        "title": "Graphic Design",
+        "slug": "graphic_design"
+      },
+      {
+        "title": "Music",
+        "slug": "music"
+      },
+      {
+        "title": "Music Theory",
+        "slug": "music_theory"
+      },
+      {
+        "title": "Painting",
+        "slug": "painting"
+      },
+      {
+        "title": "Photography",
+        "slug": "photography"
+      }
+    ]
+  },
+  {
+    "category": "Animals",
+    "slug": "animals",
+    "color": "#F59E0B",
+    "subcategories": [
+      {
+        "title": "Bears",
+        "slug": "bears"
+      },
+      {
+        "title": "Cats",
+        "slug": "cats"
+      },
+      {
+        "title": "Kittens",
+        "slug": "kittens"
+      },
+      {
+        "title": "Dogs",
+        "slug": "dogs"
+      },
+      {
+        "title": "Puppies",
+        "slug": "puppies"
+      }
+    ]
+  },
+  {
+    "category": "Fiction",
+    "slug": "fiction",
+    "color": "#3B82F6",
+    "subcategories": [
+      {
+        "title": "Fantasy",
+        "slug": "fantasy"
+      },
+      {
+        "title": "Historical Fiction",
+        "slug": "historical_fiction"
+      },
+      {
+        "title": "Horror",
+        "slug": "horror"
+      },
+      {
+        "title": "Humor",
+        "slug": "humor"
+      },
+      {
+        "title": "Literature",
+        "slug": "literature"
+      },
+      {
+        "title": "Magic",
+        "slug": "magic"
+      },
+      {
+        "title": "Mystery and detective stories",
+        "slug": "mystery_and_detective_stories"
+      },
+      {
+        "title": "Plays",
+        "slug": "plays"
+      },
+      {
+        "title": "Poetry",
+        "slug": "poetry"
+      },
+      {
+        "title": "Romance",
+        "slug": "romance"
+      },
+      {
+        "title": "Science Fiction",
+        "slug": "science_fiction"
+      },
+      {
+        "title": "Short Stories",
+        "slug": "short_stories"
+      },
+      {
+        "title": "Thriller",
+        "slug": "thriller"
+      },
+      {
+        "title": "Young Adult",
+        "slug": "young_adult"
+      }
+    ]
+  },
+  {
+    "category": "Science & Mathematics",
+    "slug": "science_and_mathematics",
+    "color": "#06B6D4",
+    "subcategories": [
+      {
+        "title": "Biology",
+        "slug": "biology"
+      },
+      {
+        "title": "Chemistry",
+        "slug": "chemistry"
+      },
+      {
+        "title": "Mathematics",
+        "slug": "mathematics"
+      },
+      {
+        "title": "Physics",
+        "slug": "physics"
+      },
+      {
+        "title": "Programming",
+        "slug": "programming"
+      }
+    ]
+  },
+  {
+    "category": "Business & Finance",
+    "slug": "business_and_finance",
+    "color": "#10B981",
+    "subcategories": [
+      {
+        "title": "Management",
+        "slug": "management"
+      },
+      {
+        "title": "Entrepreneurship",
+        "slug": "entrepreneurship"
+      },
+      {
+        "title": "Business Economics",
+        "slug": "business_economics"
+      },
+      {
+        "title": "Business Success",
+        "slug": "business_success"
+      },
+      {
+        "title": "Finance",
+        "slug": "finance"
+      }
+    ]
+  },
+  {
+    "category": "Children's",
+    "slug": "childrens",
+    "color": "#7C3AED",
+    "subcategories": [
+      {
+        "title": "Kids Books",
+        "slug": "kids_books"
+      },
+      {
+        "title": "Stories in Rhyme",
+        "slug": "stories_in_rhyme"
+      },
+      {
+        "title": "Baby Books",
+        "slug": "baby_books"
+      },
+      {
+        "title": "Bedtime Books",
+        "slug": "bedtime_books"
+      },
+      {
+        "title": "Picture Books",
+        "slug": "picture_books"
+      }
+    ]
+  },
+  {
+    "category": "History",
+    "slug": "history",
+    "color": "#6B7280",
+    "subcategories": [
+      {
+        "title": "Ancient Civilization",
+        "slug": "ancient_civilization"
+      },
+      {
+        "title": "Archaeology",
+        "slug": "archaeology"
+      },
+      {
+        "title": "Anthropology",
+        "slug": "anthropology"
+      },
+      {
+        "title": "World War II",
+        "slug": "world_war_ii"
+      },
+      {
+        "title": "Social Life and Customs",
+        "slug": "social_life_and_customs"
+      }
+    ]
+  },
+  {
+    "category": "Health & Wellness",
+    "slug": "health_and_wellness",
+    "color": "#93C5FD",
+    "subcategories": [
+      {
+        "title": "Cooking",
+        "slug": "cooking"
+      },
+      {
+        "title": "Cookbooks",
+        "slug": "cookbooks"
+      },
+      {
+        "title": "Mental Health",
+        "slug": "mental_health"
+      },
+      {
+        "title": "Exercise",
+        "slug": "exercise"
+      },
+      {
+        "title": "Nutrition",
+        "slug": "nutrition"
+      },
+      {
+        "title": "Self_help",
+        "slug": "self_help"
+      }
+    ]
+  },
+  {
+    "category": "Biography",
+    "slug": "biography",
+    "color": "#FCD34D",
+    "subcategories": [
+      {
+        "title": "Autobiographies",
+        "slug": "autobiographies"
+      },
+      {
+        "title": "Kings and Rulers",
+        "slug": "kings_and_rulers"
+      },
+      {
+        "title": "Composers",
+        "slug": "composers"
+      },
+      {
+        "title": "Artists",
+        "slug": "artists"
+      }
+    ]
+  },
+  {
+    "category": "Social Sciences",
+    "slug": "social_sciences",
+    "color": "#D97706",
+    "subcategories": [
+      {
+        "title": "Religion",
+        "slug": "religion"
+      },
+      {
+        "title": "Political Science",
+        "slug": "political_science"
+      },
+      {
+        "title": "Psychology",
+        "slug": "psychology"
+      }
+    ]
+  },
+  {
+    "category": "Places",
+    "slug": "places",
+    "color": "#4ADE80",
+    "subcategories": [
+      {
+        "title": "Brazil",
+        "slug": "brazil"
+      },
+      {
+        "title": "India",
+        "slug": "india"
+      },
+      {
+        "title": "Indonesia",
+        "slug": "indonesia"
+      },
+      {
+        "title": "United States",
+        "slug": "united_states"
+      }
+    ]
+  },
+  {
+    "category": "Textbooks",
+    "slug": "textbooks",
+    "color": "#7DD3FC",
+    "subcategories": [
+      {
+        "title": "Algebra",
+        "slug": "algebra"
+      },
+      {
+        "title": "Geography",
+        "slug": "geography"
+      },
+      {
+        "title": "English Language",
+        "slug": "english_language"
+      },
+      {
+        "title": "Books by Language",
+        "slug": "books_by_language"
+      }
+    ]
+  }
+]
