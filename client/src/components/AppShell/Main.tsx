@@ -63,7 +63,7 @@ function Main() {
                             sx={{
                               color: "#e6e6e6",
                               textDecoration: "none",
-                              transition: "all 0.3s",
+                              transition: "all 0.2s",
                               width: "200px",
                               height: "200px",
                               padding: "12px",
@@ -77,8 +77,7 @@ function Main() {
                               alignItems: "center",
                               justifyContent: "center",
                               ":hover": {
-                                transform: "scale(1.07)",
-                                boxShadow: "0 0 0px 2px #4fff84",
+                                transform: "scale(1.05)",
                               },
                             }}
                           >
