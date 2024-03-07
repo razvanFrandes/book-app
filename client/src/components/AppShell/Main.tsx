@@ -15,8 +15,9 @@ import CategoryPage from "./Category/CategoryPage";
 function Main() {
   const [categories, setCategories] = useState([]);
 
+  const API_BASE_URL = "https://book-app-8kq8.vercel.app/";
   useEffect(() => {
-    axios.get("http://localhost:3001/api/categories").then((response) => {
+    axios.get(`${API_BASE_URL}/api/categories`).then((response) => {
       setCategories(response.data);
     });
   }, []);
