@@ -56,17 +56,17 @@ function Main() {
                         }}
                       >
                         {category.subcategories.map((subcategory, index) => (
-                          <NavLink
+                          <Box
+                            component={NavLink}
                             key={subcategory.slug}
                             to={`/category/${subcategory.slug}`}
-                            style={{
+                            sx={{
                               color: "#e6e6e6",
                               textDecoration: "none",
-                              transition: "transform 0.2s",
+                              transition: "all 0.3s",
                               width: "200px",
                               height: "200px",
-                              padding: "12px",                              
-                              transform: "scale(1.05)",
+                              padding: "12px",
                               backgroundColor: colorGenerator(
                                 category.color,
                                 index
@@ -76,6 +76,10 @@ function Main() {
                               display: "flex",
                               alignItems: "center",
                               justifyContent: "center",
+                              ":hover": {
+                                transform: "scale(1.07)",
+                                boxShadow: "0 0 0px 2px #4fff84",
+                              },
                             }}
                           >
                             <Typography
@@ -89,7 +93,7 @@ function Main() {
                             >
                               {subcategory.title}
                             </Typography>
-                          </NavLink>
+                          </Box>
                         ))}
                       </Box>
                     </Box>
