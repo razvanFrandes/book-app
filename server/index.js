@@ -62,7 +62,7 @@ app.get("/api/all-books", async (req, res) => {
 app.get("/api/books/read", async (req, res) => {
   try {
     if (booksData.length === 0) {
-      axios.get("http://localhost:3001/api/all-books").then((response) => {
+      axios.get("https://book-app-8kq8.vercel.app/api/all-books").then((response) => {
         booksData = response.data;
         return booksData;
       });
