@@ -2,18 +2,19 @@ const express = require("express");
 const cors = require("cors");
 const axios = require("axios");
 const app = express();
+const fs = require("fs");
 
 // Import the default data
 const categories = require("./categories.json");
-let booksData = []; // Store books data in memory
+const booksData = require("./books.json");
 
 app.use(cors());
 app.use(express.json());
 
-// Fetch the books data and store it in memory
+// Save the books in a JSON file, cause no db :(
 app.get("/api/all-books", async (req, res) => {
   try {
-    if (booksData.length > 0) {
+    if (booksData && booksData.length > 0) {
       return res.json(booksData);
     }
 
@@ -49,9 +50,12 @@ app.get("/api/all-books", async (req, res) => {
       }
     }
 
-    booksData = [...currentlyReading, ...alreadyRead, ...wantToRead];
+    const books = [...currentlyReading, ...alreadyRead, ...wantToRead];
 
-    res.json(booksData);
+    // Save the books to a JSON file
+    fs.writeFileSync("books.json", JSON.stringify(books, null, 2));
+
+    res.json(books);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Failed to fetch books" });
@@ -61,12 +65,6 @@ app.get("/api/all-books", async (req, res) => {
 // Get all read books
 app.get("/api/books/read", async (req, res) => {
   try {
-    if (booksData.length === 0) {
-      axios.get("https://book-app-8kq8.vercel.app/api/all-books").then((response) => {
-        booksData = response.data;
-        return booksData;
-      });
-    }
     const response = booksData.filter((book) => book.status === "read");
     res.json(response);
   } catch (error) {
@@ -102,6 +100,9 @@ app.post("/api/books/reading", async (req, res) => {
       booksData.push(book);
     }
 
+    // Save the updated booksData to the JSON file
+    fs.writeFileSync("books.json", JSON.stringify(booksData, null, 2));
+
     res.json({ message: "Book added to reading list successfully" });
   } catch (error) {
     console.error(error);
@@ -120,7 +121,7 @@ app.get("/api/books/want-to-read", async (req, res) => {
   }
 });
 
-// Update book status
+//Update books josn file for book status
 app.put("/api/books/", async (req, res) => {
   try {
     const { bookId, status } = req.body;
@@ -133,6 +134,9 @@ app.put("/api/books/", async (req, res) => {
 
     // Update the book's status
     booksData[bookIndex].status = status;
+
+    // Save the updated books data to the JSON file
+    fs.writeFileSync("books.json", JSON.stringify(booksData, null, 2));
 
     res.json({
       message: {
@@ -153,6 +157,7 @@ app.post("/api/books", async (req, res) => {
     const newBook = req.body;
     newBook.status = "want-to-read"; // Set the initial status of the new book
     booksData.unshift(newBook);
+    fs.writeFileSync("books.json", JSON.stringify(booksData, null, 2));
     res.json({ message: "Book added successfully" });
   } catch (error) {
     console.error(error);
@@ -174,6 +179,9 @@ app.delete("/api/books/", async (req, res) => {
 
     // Remove the book from the booksData array
     booksData.splice(bookIndex, 1);
+
+    // Save the updated booksData to the JSON file
+    fs.writeFileSync("books.json", JSON.stringify(booksData, null, 2));
 
     res.json({ message: "Book deleted successfully" });
   } catch (error) {
