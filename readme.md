@@ -14,14 +14,16 @@ The Book App was built using the following technologies:
 -   **Express.js:** The backend server was built using Express.js, a lightweight and flexible Node.js framework, to handle API requests and serve static assets.
 -   **Axios:** Axios was utilized for making HTTP requests to fetch book data from the open API.
 -   **Material-UI:** Material-UI provided a set of pre-designed React components with a Material Design look and feel, allowing for a visually appealing user interface.
--   **Local Storage:** Instead of using a traditional database, local storage was employed to mimic database functionality, enabling the storage and retrieval of user data within the browser.
+-   **Server Memory:** Tryed with a dummy json, but Vercel dosent let the use of fs.writeFileSync
+-   **SWR:** For state management and caching.
+-   **Formik:** Form functionality to handle errors and updates.
 
 ## Features
 
 -   **Book Categorization:** Users can categorize books into different lists based on their reading preferences, including books they want to read, books they have read, and books they have finished reading.
 -   **API Integration:** The app integrates with an open API book list to fetch book data, allowing users to explore and discover new books to add to their lists.
 -   **Custom Design:** A custom theme was implemented using Material-UI's theme options to provide a visually pleasing and cohesive design throughout the application.
-- **Add a book** A custom form build with formik where the user can upload a books to his want-to-read list.
+-   **Add a book** A custom form build with formik where the user can upload a books to his want-to-read list.
 
 ## Conclusion
 
