@@ -12,10 +12,12 @@
     "@types/uuid": "^9.0.8",
     "axios": "^1.6.7",
     "formik": "^2.4.5",
+    "framer-motion": "^11.0.8",
     "react": "latest",
     "react-dom": "latest",
     "react-router-dom": "^6.22.2",
     "react-scripts": "latest",
+    "swr": "^2.2.5",
     "typescript": "latest",
     "uuid": "^9.0.1"
   },

@@ -75,11 +75,14 @@ const customTheme: Theme = createTheme({
         outlined: {
           color: "#fff",
           borderColor: "#fff",
+          px: 0,
+          border: "none",
           ":hover": {
             borderColor: "#4fff84",
-            color: "#4fff84"
+            color: "#4fff84",
+            border: "none",
           },
-        }
+        },
       },
     },
     MuiAppBar: {
@@ -119,6 +122,71 @@ const customTheme: Theme = createTheme({
           },
           "&:hover": {
             backgroundColor: "rgb(255 255 255 / 10%)",
+          },
+        },
+      },
+    },
+
+    MuiDialog: {
+      styleOverrides: {
+        paper: {
+          backgroundColor: "#171717",
+          border: "1px solid #4fff84",
+          backgroundImage: "none",
+          color: "#fff",
+        },
+        container: {
+          backdropFilter: "blur(10px)",
+        },
+      },
+    },
+
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          "& .MuiInputBase-input": {
+            color: "#fff",
+          },
+          "& .MuiInputLabel-root": {
+            color: "#b6b6b6",
+          },
+          "& .MuiOutlinedInput-root": {
+            "& fieldset": {
+              borderColor: "#404040",
+            },
+            "&:hover fieldset": {
+              borderColor: "#4fff84",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "#4fff84",
+            },
+          },
+        },
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          color: "#4fff84",
+          "&.Mui-focused ": {
+            color: "#4fff84",
+          },
+        },
+      },
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          color: "#fff",
+          borderColor: "#4fff84",
+          "&:hover": {
+            borderColor: "#4fff84",
+          },
+          "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            borderColor: "#4fff84 !important",
+          },
+          ":hover": {
+            borderColor: "#4fff84",
           },
         },
       },

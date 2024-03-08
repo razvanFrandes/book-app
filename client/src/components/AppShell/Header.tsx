@@ -1,40 +1,41 @@
+// Header.tsx
 import React from "react";
-import { AppBar, Toolbar, Typography, IconButton, Box } from "@mui/material";
-import { Menu as MenuIcon, Search as SearchIcon } from "@mui/icons-material";
+import { AppBar, Toolbar, IconButton, Typography } from "@mui/material";
+import { Menu as MenuIcon } from "@mui/icons-material";
+import useDrawer from "./../hooks/useDrawer";
 
 const Header: React.FC = () => {
+  const { toggleDrawer } = useDrawer();
+
   return (
-    <AppBar sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
+    <AppBar
+      position="sticky"
+      sx={{
+        backgroundColor: "#000",
+        margin: "0px -20px",
+        width: "calc(100% + 40px)",
+        color: "#fff",
+        top: -30,
+        mt: "-30px",
+        borderBottom: "1px solid #4fff84",
+        zIndex: (theme) => theme.zIndex.drawer - 1,
+      }}
+    >
       <Toolbar>
         <IconButton
           color="inherit"
-          aria-label="open drawer"
           edge="start"
-          sx={{ mr: 2, display: { sm: "none" } }}
+          onClick={() => toggleDrawer(true)}
+          sx={{ mr: 2, display: { md: "none" } }}
         >
           <MenuIcon />
         </IconButton>
-
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            margin: "auto",
-            gap: "20px",
-          }}
-        >
-          <img src="/book-worm-logo.svg" alt="logo" width="50" height="50" />
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ fontWeight: "900", flexGrow: 1 }}
-          >
-            Book Worm
-          </Typography>
-        </Box>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          BookStore
+        </Typography>
       </Toolbar>
     </AppBar>
   );
 };
+
 export default Header;

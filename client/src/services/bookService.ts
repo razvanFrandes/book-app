@@ -1,139 +1,104 @@
-// bookService.ts
+import useSWR, { mutate } from "swr";
 import axios from "axios";
+import { API_BASE_URL } from "./../utils/constants";
 
-const API_BASE_URL = "https://book-app-8kq8.vercel.app";
+const fetcher = (url: string) => axios.get(url).then((res) => res.data);
 
-export const fetchReadingBooks = async () => {
-  const readingBooks = localStorage.getItem("readingBooks");
-  if (readingBooks) {
-    return JSON.parse(readingBooks);
-  }
-  try {
-    const response = await axios.get(`${API_BASE_URL}/api/books/reading`);
-    const books = response.data;
-    localStorage.setItem("readingBooks", JSON.stringify(books));
-    return books;
-  } catch (error) {
-    console.error("Failed to fetch reading books:", error);
-    return [];
-  }
+export const useReadingBooks = () => {
+  const { data, error, mutate } = useSWR(
+    `${API_BASE_URL}/api/books/reading`,
+    fetcher
+  );
+  return {
+    readingBooks: data,
+    isLoading: !error && !data,
+    isError: error,
+    mutate,
+  };
 };
 
-export const fetchReadBooks = async () => {
-  const readBooks = localStorage.getItem("readBooks");
-  if (readBooks) {
-    return JSON.parse(readBooks);
-  }
-  try {
-    const response = await axios.get(`${API_BASE_URL}/api/books/read`);
-    const books = response.data;
-    localStorage.setItem("readBooks", JSON.stringify(books));
-    return books;
-  } catch (error) {
-    console.error("Failed to fetch read books:", error);
-    return [];
-  }
+export const useWantToReadBooks = () => {
+  const { data, error, mutate } = useSWR(
+    `${API_BASE_URL}/api/books/want-to-read`,
+    fetcher
+  );
+  return {
+    wantToReadBooks: data,
+    isLoading: !error && !data,
+    isError: error,
+    mutate,
+  };
 };
 
-export const fetchBooks = async () => {
-  const readingBooks = localStorage.getItem("readingBooks");
-  const readBooks = localStorage.getItem("readBooks");
-  const wantToReadBooks = localStorage.getItem("wantToReadBooks");
-  if (readingBooks && readBooks && wantToReadBooks) {
-    return {
-      readingBooks: JSON.parse(readingBooks),
-      readBooks: JSON.parse(readBooks),
-      wantToReadBooks: JSON.parse(wantToReadBooks),
-    };
-  }
-  try {
-    const [readingResponse, readResponse] = await Promise.all([
-      axios.get(`${API_BASE_URL}/api/books/reading`),
-      axios.get(`${API_BASE_URL}/api/books/read`),
-    ]);
-    const readingBooksData = readingResponse.data;
-    let readBooksData = readResponse.data;
-    let wantToReadBooksData: any[] = [];
-
-    // I just selected 10 books for the sake of this example
-    const randomBooks = getRandomBooks(readBooksData, 10);
-    wantToReadBooksData = [...wantToReadBooksData, ...randomBooks];
-
-    // Remove the selected random books from readBooksData
-    readBooksData = readBooksData.filter(
-      (book: { key: any }) =>
-        !randomBooks.some((randomBook) => randomBook.key === book.key)
-    );
-
-    localStorage.setItem("readingBooks", JSON.stringify(readingBooksData));
-    localStorage.setItem("readBooks", JSON.stringify(readBooksData));
-    localStorage.setItem(
-      "wantToReadBooks",
-      JSON.stringify(wantToReadBooksData)
-    );
-
-    return {
-      readingBooks: readingBooksData,
-      readBooks: readBooksData,
-      wantToReadBooks: wantToReadBooksData,
-    };
-  } catch (error) {
-    console.error("Failed to fetch books:", error);
-    return {
-      readingBooks: [],
-      readBooks: [],
-      wantToReadBooks: [],
-    };
-  }
+export const useReadBooks = () => {
+  const { data, error, mutate } = useSWR(
+    `${API_BASE_URL}/api/books/read`,
+    fetcher
+  );
+  return {
+    readBooks: data,
+    isLoading: !error && !data,
+    isError: error,
+    mutate,
+  };
 };
 
-export const addBookToReadingList = (book: any) => {
-  const readingBooks = localStorage.getItem("readingBooks");
-  if (readingBooks) {
-    const readingBooksArray = JSON.parse(readingBooks);
-    const bookExists = readingBooksArray.some(
-      (existingBook: any) => existingBook.key === book.key
-    );
-    if (!bookExists) {
-      readingBooksArray.push(book);
-      localStorage.setItem("readingBooks", JSON.stringify(readingBooksArray));
+// Update Book Status
+export const useUpdateBookStatus = () => {
+  const { mutate: mutateReadingBooks } = useReadingBooks();
+  const { mutate: mutateWantToReadBooks } = useWantToReadBooks();
+  const { mutate: mutateReadBooks } = useReadBooks();
+
+  const updateBookStatus = async (bookId: string, status: string) => {
+    try {
+      await axios.put(`${API_BASE_URL}/api/books/`, { bookId, status });
+
+      // Trigger revalidation of the affected book lists
+      mutateReadingBooks();
+      mutateWantToReadBooks();
+      mutateReadBooks();
+    } catch (error) {
+      console.error("Failed to update book status:", error);
+      throw error;
     }
-  } else {
-    localStorage.setItem("readingBooks", JSON.stringify([book]));
+  };
+
+  return updateBookStatus;
+};
+
+// Add Book to Reading List
+export const addBookToReadingList = async (book: any) => {
+  try {
+    await axios.post(`${API_BASE_URL}/api/books/reading`, book);
+    mutate(`${API_BASE_URL}/api/books/reading`);
+  } catch (error) {
+    console.error("Failed to add book to reading list:", error);
+    throw error;
   }
 };
 
-// Helper function to select random books
-const getRandomBooks = (books: any[], count: number): any[] => {
-  const shuffled = [...books].sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, count);
+// Upload a Book
+export const addBook = async (book: any) => {
+  try {
+    await axios.post(`${API_BASE_URL}/api/books`, book);
+    mutate(`${API_BASE_URL}/api/books/reading`);
+    mutate(`${API_BASE_URL}/api/books/want-to-read`);
+    mutate(`${API_BASE_URL}/api/books/read`);
+  } catch (error) {
+    console.error("Failed to add book:", error);
+    throw error;
+  }
 };
 
-// Add this function to move a book to a different category
-export const moveBook = (
-  bookId: string,
-  sourceCategory: string,
-  destinationCategory: string
-) => {
-  const sourceBooks = localStorage.getItem(sourceCategory);
-  const destinationBooks = localStorage.getItem(destinationCategory);
-  console.log(destinationBooks);
-  if (sourceBooks && destinationBooks) {
-    const sourceBooksArray = JSON.parse(sourceBooks);
-    const destinationBooksArray = JSON.parse(destinationBooks);
-
-    const bookIndex = sourceBooksArray.findIndex(
-      (book: { key: string }) => book.key === bookId
-    );
-    if (bookIndex !== -1) {
-      const [movedBook] = sourceBooksArray.splice(bookIndex, 1);
-
-      destinationBooksArray.push(movedBook);
-      localStorage.setItem(sourceCategory, JSON.stringify(sourceBooksArray));
-      localStorage.setItem(
-        destinationCategory,
-        JSON.stringify(destinationBooksArray)
-      );
-    }
+// Delete a Book
+export const deleteBook = async (bookId: string) => {
+  try {
+    await axios.delete(`${API_BASE_URL}/api/books/`, { data: { bookId } });
+    mutate(`${API_BASE_URL}/api/books/reading`);
+    mutate(`${API_BASE_URL}/api/books/want-to-read`);
+    mutate(`${API_BASE_URL}/api/books/read`);
+  } catch (error) {
+    console.error("Failed to delete book:", error);
+    throw error;
   }
 };

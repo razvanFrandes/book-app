@@ -1,66 +1,46 @@
 // Sidebar.tsx
 import React from "react";
-import { useState, useEffect } from "react";
-import { Drawer, Box, Typography, Button } from "@mui/material";
-import { fetchBooks } from "./../../services/bookService";
+import { Drawer, Box, useMediaQuery, Theme, IconButton } from "@mui/material";
 import BookList from "./../BookList/BookList";
-import { Book } from "../../types/BookTypes";
 import BookForm from "../BookForm/BookForm";
-import { Menu } from "@mui/icons-material";
+import useDrawer from "./../hooks/useDrawer";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const drawerWidth = 400;
 
 const Sidebar: React.FC = () => {
-  const [readingBooks, setReadingBooks] = useState<Book[]>([]);
-  const [wantToReadBooks, setWantToReadBooks] = useState<Book[]>([]);
-  const [readBooks, setReadBooks] = useState<Book[]>([]);
-  const [open, setOpen] = React.useState(false);
-
-  const toggleDrawer = (newOpen: boolean) => () => {
-    setOpen(newOpen);
-  };
-  useEffect(() => {
-    const fetchBooksData = async () => {
-      const { readingBooks, wantToReadBooks, readBooks } = await fetchBooks();
-      setReadingBooks(readingBooks);
-      setWantToReadBooks(wantToReadBooks);
-      setReadBooks(readBooks);
-    };
-    fetchBooksData();
-  }, []);
+  const { open, toggleDrawer } = useDrawer();
+  const isDesktop = useMediaQuery((theme: Theme) => theme.breakpoints.up("md"));
 
   return (
     <>
-      <Button
-        onClick={toggleDrawer(true)}
-        sx={{
-          color: "#000",
-          height: "100px",
-          width: "70px",
-          bgcolor: "#4fff84",
-          ":hover": {
-            bgcolor: "#4fff84",
-            opacity: 0.8,
-          },
-          borderRadius: 0,
-          position: "sticky",
-          top: 0,
-        }}
-      >
-        <Menu />
-      </Button>
+      <Box hidden={!open}>
+        <IconButton
+          color="inherit"
+          edge="start"
+          onClick={() => toggleDrawer(false)}
+          sx={{
+            mr: 2,
+            position: "fixed",
+            top: 10,
+            right: -10,
+            zIndex: 99999,
+            display: { md: "none" },
+          }}
+        >
+          <MenuIcon />
+        </IconButton>
+      </Box>
       <Drawer
-        open={open}
-        onClose={toggleDrawer(false)}
-        variant="temporary"
-        ModalProps={{
-          keepMounted: true,
-        }}
+        variant={isDesktop ? "permanent" : "temporary"}
+        open={isDesktop || open}
+        onClose={() => toggleDrawer(false)}
+        ModalProps={{ keepMounted: true }}
         sx={{
-          width: drawerWidth,
+          width: isDesktop ? drawerWidth : "calc(100% - 50px)",
           flexShrink: 0,
           [`& .MuiDrawer-paper`]: {
-            width: drawerWidth,
+            width: isDesktop ? drawerWidth : "calc(100% - 50px)",
             boxSizing: "border-box",
           },
         }}
@@ -74,7 +54,7 @@ const Sidebar: React.FC = () => {
             flexGrow: 1,
           }}
         >
-          <BookList books={{ readingBooks, wantToReadBooks, readBooks }} />
+          <BookList />
           <BookForm />
         </Box>
       </Drawer>

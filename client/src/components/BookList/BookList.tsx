@@ -1,47 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Box,
   List,
   Tabs,
   Tab,
   Typography,
-  Hidden,
   CircularProgress,
 } from "@mui/material";
 import BookListItem from "./BookListItem";
 import { BooksListProps } from "../../types/BookTypes";
-import { fetchBooks, moveBook } from "../../services/bookService";
+import {
+  useReadingBooks,
+  useWantToReadBooks,
+  useReadBooks,
+} from "../../services/bookService";
 
-const BooksList: React.FC<BooksListProps> = () => {
-  const [books, setBooks] = useState({
-    readingBooks: [],
-    wantToReadBooks: [],
-    readBooks: [],
-  });
+const BooksList: React.FC = () => {
   const [tabIndex, setTabIndex] = useState(0);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchBooksData = async () => {
-      const booksData = await fetchBooks();
-      setBooks(booksData);
-      setLoading(false);
-    };
-    fetchBooksData();
-  }, []);
+  const { readingBooks, isLoading: isReadingBooksLoading } = useReadingBooks();
+  const { wantToReadBooks, isLoading: isWantToReadBooksLoading } =
+    useWantToReadBooks();
+  const { readBooks, isLoading: isReadBooksLoading } = useReadBooks();
 
   const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
     setTabIndex(newValue);
-  };
-
-  const handleMoveBook = async (
-    bookId: string,
-    sourceCategory: string,
-    destinationCategory: string
-  ) => {
-    moveBook(bookId, sourceCategory, destinationCategory);
-    const updatedBooksData = await fetchBooks();
-    setBooks(updatedBooksData);
   };
 
   function booksTabsIndex(index: number) {
@@ -50,6 +32,11 @@ const BooksList: React.FC<BooksListProps> = () => {
       "aria-controls": `book-tabpanel-${index}`,
     };
   }
+
+  console.log(readingBooks);
+
+  const isLoading =
+    isReadingBooksLoading || isWantToReadBooksLoading || isReadBooksLoading;
 
   return (
     <List sx={{ pt: 0, overflow: "hidden" }}>
@@ -70,7 +57,7 @@ const BooksList: React.FC<BooksListProps> = () => {
           <Tab sx={{ flex: 1 }} label="Finished" {...booksTabsIndex(2)} />
         </Tabs>
       </Box>
-      {loading && (
+      {isLoading && (
         <CircularProgress
           sx={{
             color: "#fff",
@@ -85,56 +72,47 @@ const BooksList: React.FC<BooksListProps> = () => {
       )}
 
       <Box sx={{ overflow: "auto", height: "calc(100vh - 140px)" }}>
-        {books.readingBooks && books.readingBooks.length > 0 ? (
+        {readingBooks && readingBooks.length > 0 ? (
           tabIndex === 0 && (
             <Box sx={{ my: 1 }}>
-              {books.readingBooks.map((book: any) => (
+              {readingBooks.map((book: any) => (
                 <BookListItem
                   key={book.key + book.title}
                   book={book}
                   tabIndex={tabIndex}
-                  onMoveBook={(bookId, category) =>
-                    handleMoveBook(bookId, "readingBooks", category)
-                  }
                 />
               ))}
             </Box>
           )
         ) : (
           <Typography variant="h6" sx={{ textAlign: "center", mt: 2 }}>
-            No books to read
+            0 books currently reading
           </Typography>
         )}
-        {books.wantToReadBooks && books.wantToReadBooks.length > 0 ? (
+        {wantToReadBooks && wantToReadBooks.length > 0 ? (
           tabIndex === 1 && (
             <Box sx={{ my: 1 }}>
-              {books.wantToReadBooks.map((book: any) => (
+              {wantToReadBooks.map((book: any) => (
                 <BookListItem
                   key={book.key + book.title}
                   book={book}
                   tabIndex={tabIndex}
-                  onMoveBook={(bookId, category) =>
-                    handleMoveBook(bookId, "wantToReadBooks", category)
-                  }
                 />
               ))}
             </Box>
           )
         ) : (
           <Typography variant="h6" sx={{ textAlign: "center", mt: 2 }}>
-            No books to read
+            Add books to your want to read list
           </Typography>
         )}
-        {books.readBooks && books.readBooks.length > 0 && tabIndex === 2 && (
+        {readBooks && readBooks.length > 0 && tabIndex === 2 && (
           <Box sx={{ my: 1 }}>
-            {books.readBooks.map((book: any) => (
+            {readBooks.map((book: any) => (
               <BookListItem
                 key={book.key + book.title}
                 book={book}
                 tabIndex={tabIndex}
-                onMoveBook={(bookId, category) =>
-                  handleMoveBook(bookId, "readBooks", category)
-                }
               />
             ))}
           </Box>

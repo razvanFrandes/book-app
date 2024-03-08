@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import { useFormik } from "formik";
 import { v4 as uuidv4 } from "uuid";
+import { addBook } from "./../../services/bookService";
 
 function BookForm() {
   const [openDialog, setOpenDialog] = useState(false);
@@ -26,28 +27,27 @@ function BookForm() {
   const formik = useFormik({
     initialValues: {
       title: "",
-      author_names: [""],
+      author_names: "",
       first_publish_year: "",
       // Add more fields as needed
     },
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       const newBook = {
         key: uuidv4(),
         title: values.title,
         author_names: [values.author_names],
         first_publish_year: values.first_publish_year,
+        color: '#4fff84',
         // Add more properties as needed
       };
 
       // Add the new book to the "want to read" books in local storage
-      const wantToReadBooks = JSON.parse(
-        localStorage.getItem("wantToReadBooks") || "[]"
-      );
-      wantToReadBooks.unshift(newBook);
-      localStorage.setItem("wantToReadBooks", JSON.stringify(wantToReadBooks));
-
-      // Close the dialog after submission
-      handleCloseDialog();
+      try {
+        await addBook(newBook);
+        handleCloseDialog();
+      } catch (error) {
+        console.error("Failed to add book:", error);
+      }
     },
   });
   return (
@@ -69,7 +69,7 @@ function BookForm() {
       <Dialog open={openDialog} onClose={handleCloseDialog}>
         <DialogTitle>Add a Book</DialogTitle>
         <DialogContent>
-          <form onSubmit={formik.handleSubmit}>
+          <form onSubmit={formik.handleSubmit} style={{ paddingTop: 20 }}>
             <TextField
               fullWidth
               id="title"
