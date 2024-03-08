@@ -3,6 +3,7 @@
 
 URL : [https://book-app-client-mu.vercel.app/](https://book-app-client-mu.vercel.app/)
 API USED : [https://openlibrary.org/developers/api](https://openlibrary.org/developers/api)
+Used my server to host express.js : https://book.maat.directory/
 
 The Book App is a straightforward web application designed to organize and manage your reading preferences using an open API book list. With this app, users can categorize books they like, books they plan to read, and books they have already read. The primary functionalities include the ability to add books to your "want to read" list, update your reading lists by moving books between three categories (read, want to read, and finished), and view and interact with books based on their categories.
 
