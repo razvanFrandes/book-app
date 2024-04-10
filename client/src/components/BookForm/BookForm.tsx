@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import {
-  Drawer,
   Box,
   Typography,
   Dialog,
@@ -11,7 +10,9 @@ import {
 } from "@mui/material";
 import { useFormik } from "formik";
 import { v4 as uuidv4 } from "uuid";
+import * as Yup from "yup";
 import { addBook } from "./../../services/bookService";
+import { Book } from "../../types/BookTypes";
 
 function BookForm() {
   const [openDialog, setOpenDialog] = useState(false);
@@ -24,24 +25,29 @@ function BookForm() {
     setOpenDialog(false);
   };
 
+  const validationSchema = Yup.object({
+    title: Yup.string().required("Title is required"),
+    author_names: Yup.string().required("Author name is required"),
+    first_publish_year: Yup.string().required("First publish year is required"),
+  });
+
   const formik = useFormik({
     initialValues: {
       title: "",
       author_names: "",
       first_publish_year: "",
-      // Add more fields as needed
     },
+    validationSchema,
     onSubmit: async (values) => {
-      const newBook = {
+      const newBook: Book = {
         key: uuidv4(),
         title: values.title,
-        author_names: [values.author_names],
+        author_names: values.author_names,
         first_publish_year: values.first_publish_year,
-        color: '#4fff84',
-        // Add more properties as needed
+        color: "#4fff84",
+        authors: [{ name: values.author_names }],
       };
 
-      // Add the new book to the "want to read" books in local storage
       try {
         await addBook(newBook);
         handleCloseDialog();
@@ -114,7 +120,6 @@ function BookForm() {
                 formik.errors.first_publish_year
               }
             />
-            {/* Add more form fields as needed */}
             <Button
               sx={{
                 width: "100%",

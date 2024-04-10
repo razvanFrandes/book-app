@@ -151,6 +151,36 @@ app.put("/api/books/", async (req, res) => {
   }
 });
 
+// Update and edit a book
+app.put("/api/books/edit", async (req, res) => {
+  try {
+    const { key, title, author_names, first_publish_year } = req.body;
+    const bookIndex = booksData.findIndex((book) => book.key === key);
+
+    if (bookIndex === -1) {
+      return res.status(404).json({ error: "Book not found" });
+    }
+
+    booksData[bookIndex].title = title;
+    booksData[bookIndex].author_names = [author_names];
+    booksData[bookIndex].first_publish_year = first_publish_year;
+
+    // Save the updated books data to the JSON file
+    fs.writeFileSync("books.json", JSON.stringify(booksData, null, 2));
+
+    res.json({
+      message: {
+        status: "success",
+        message: "Book details updated successfully",
+        book: booksData[bookIndex],
+      },
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Failed to update book details" });
+  }
+});
+
 // Add a new book to the booksData array
 app.post("/api/books", async (req, res) => {
   try {

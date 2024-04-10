@@ -1,6 +1,7 @@
 import useSWR, { mutate } from "swr";
 import axios from "axios";
 import { API_BASE_URL } from "./../utils/constants";
+import { Book } from "../types/BookTypes";
 
 const fetcher = (url: string) => axios.get(url).then((res) => res.data);
 
@@ -67,18 +68,14 @@ export const useUpdateBookStatus = () => {
 };
 
 // Add Book to Reading List
-export const addBookToReadingList = async (book: any) => {
-  try {
-    await axios.post(`${API_BASE_URL}/api/books/reading`, book);
-    mutate(`${API_BASE_URL}/api/books/reading`);
-  } catch (error) {
-    console.error("Failed to add book to reading list:", error);
-    throw error;
-  }
+
+export const addBookToReadingList = async (book: Book): Promise<Book> => {
+  const response = await axios.post(`${API_BASE_URL}/api/books/reading`, book);
+  return response.data; // Assuming you want to return something
 };
 
 // Upload a Book
-export const addBook = async (book: any) => {
+export const addBook = async (book: Book) => {
   try {
     await axios.post(`${API_BASE_URL}/api/books`, book);
     mutate(`${API_BASE_URL}/api/books/reading`);
@@ -99,6 +96,19 @@ export const deleteBook = async (bookId: string) => {
     mutate(`${API_BASE_URL}/api/books/read`);
   } catch (error) {
     console.error("Failed to delete book:", error);
+    throw error;
+  }
+};
+
+export const editBook = async (book: Book) => {
+  console.log('caca')
+  try {
+    await axios.put(`${API_BASE_URL}/api/books/edit`, book);
+    mutate(`${API_BASE_URL}/api/books/reading`);
+    mutate(`${API_BASE_URL}/api/books/want-to-read`);
+    mutate(`${API_BASE_URL}/api/books/read`);
+  } catch (error) {
+    console.error("Failed to edit book:", error);
     throw error;
   }
 };

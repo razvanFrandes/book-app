@@ -1,5 +1,25 @@
 [
   {
+    "key": "7ab831e3-0967-42da-9add-c1d344fa3088",
+    "title": "My book",
+    "author_names": [
+      "Razvan"
+    ],
+    "first_publish_year": "20000",
+    "color": "#4fff84",
+    "status": "read"
+  },
+  {
+    "key": "affd8ace-2f69-429d-bbea-263e5159c1a1",
+    "title": "This is a book",
+    "author_names": [
+      ""
+    ],
+    "first_publish_year": "",
+    "color": "#4fff84",
+    "status": "want-to-read"
+  },
+  {
     "title": "The Inner Game of Tennis",
     "key": "/works/OL2619508W",
     "author_keys": [
@@ -8,11 +28,8 @@
       "/authors/OL9109289A"
     ],
     "author_names": [
-      "W. Timothy Gallwey",
-      "W.Timothy Gallwey",
-      "Timothy W. Gallwey"
+      "Razvan"
     ],
-    "first_publish_year": 1834,
     "lending_edition_s": null,
     "edition_key": [
       "OL27511169M",
@@ -31,7 +48,8 @@
     ],
     "cover_id": 5413630,
     "cover_edition_key": "OL18344414M",
-    "status": "reading"
+    "status": "reading",
+    "first_publish_year": "2000"
   },
   {
     "title": "The Knowledge",
@@ -67,10 +85,8 @@
       "/authors/OL224036A"
     ],
     "author_names": [
-      "Robert Greene",
-      "Joost Elffers"
+      "2000"
     ],
-    "first_publish_year": 1998,
     "lending_edition_s": null,
     "edition_key": [
       "OL34409598M",
@@ -128,7 +144,8 @@
     ],
     "cover_id": 6424160,
     "cover_edition_key": "OL24274306M",
-    "status": "reading"
+    "status": "reading",
+    "first_publish_year": "Robert Green"
   },
   {
     "title": "Why Nations Fail",
@@ -161,7 +178,7 @@
     ],
     "cover_id": 7253519,
     "cover_edition_key": null,
-    "status": "reading"
+    "status": "read"
   },
   {
     "title": "Evicted",
@@ -219,10 +236,8 @@
       "/authors/OL892424A"
     ],
     "author_names": [
-      "Richard Phillips Feynman",
-      "Ralph Leighton"
+      null
     ],
-    "first_publish_year": 1984,
     "lending_edition_s": "OL28755839M",
     "edition_key": [
       "OL23060526M",
@@ -278,7 +293,7 @@
     "author_names": [
       "Neal Stephenson"
     ],
-    "first_publish_year": 1995,
+    "first_publish_year": "2001",
     "lending_edition_s": "OL8887888M",
     "edition_key": [
       "OL27315446M",
@@ -9627,8 +9642,210 @@
     "status": "reading"
   },
   {
+    "key": "/works/OL430672W",
+    "title": "Official Congressional Directory",
+    "edition_count": 81,
+    "cover_id": 1121631,
+    "cover_edition_key": "OL7378463M",
+    "subject": [
+      "Architecture",
+      "Biography",
+      "Directories",
+      "Officials and employees",
+      "Public buildings",
+      "Salaries",
+      "United States",
+      "United States. Congress",
+      "Diplomatic and consular service",
+      "Printing",
+      "Administrative agencies",
+      "Maps",
+      "Government publications",
+      "Legislators",
+      "United States. Congress 1861-1862)",
+      "Registers",
+      "Congress",
+      "Government",
+      "Directory",
+      "Politics",
+      "Government Agencies",
+      "Periodicals",
+      "United states, congress, directories",
+      "Congresses and conventions",
+      "United states, congress, biography",
+      "United states, registers",
+      "United states, congress"
+    ],
+    "ia_collection": [
+      "USGovernmentDocuments",
+      "additional_collections",
+      "americana",
+      "inlibrary",
+      "internetarchivebooks",
+      "lincolncollection",
+      "openlibrary-d-ol",
+      "printdisabled"
+    ],
+    "lendinglibrary": false,
+    "printdisabled": true,
+    "lending_edition": "OL24992249M",
+    "lending_identifier": "congressionaldirunit",
+    "authors": [
+      {
+        "key": "/authors/OL18485A",
+        "name": "United States"
+      },
+      {
+        "key": "/authors/OL922268A",
+        "name": "United States Government Printing Office"
+      },
+      {
+        "key": "/authors/OL2661619A",
+        "name": "Joint Committee on Printing Congress (U.S.)"
+      },
+      {
+        "key": "/authors/OL2896307A",
+        "name": "Joint Committee on Printing of the United States Congress"
+      },
+      {
+        "key": "/authors/OL3040967A",
+        "name": "U S Congress"
+      },
+      {
+        "key": "/authors/OL3086268A",
+        "name": "Claitors Law"
+      },
+      {
+        "key": "/authors/OL3086269A",
+        "name": "Claitors Publishing Division"
+      },
+      {
+        "key": "/authors/OL3373195A",
+        "name": "52070065419"
+      },
+      {
+        "key": "/authors/OL3373423A",
+        "name": "S/N 052-070-07187-7"
+      },
+      {
+        "key": "/authors/OL3373439A",
+        "name": "5270067179"
+      },
+      {
+        "key": "/authors/OL3373440A",
+        "name": "5270067187"
+      },
+      {
+        "key": "/authors/OL3373672A",
+        "name": "Duane Nystrom"
+      },
+      {
+        "key": "/authors/OL3373989A",
+        "name": "S/N 052-070-07111-7"
+      },
+      {
+        "key": "/authors/OL3373990A",
+        "name": "Joint Committee on Printing"
+      },
+      {
+        "key": "/authors/OL3583670A",
+        "name": "Joint Committee on Printing United States Congress"
+      },
+      {
+        "key": "/authors/OL2799028A",
+        "name": "U. S. Congress"
+      },
+      {
+        "key": "/authors/OL4257245A",
+        "name": "5270062304"
+      },
+      {
+        "key": "/authors/OL4837839A",
+        "name": "United States. Congress. Joint Committee on Printing"
+      },
+      {
+        "key": "/authors/OL4918725A",
+        "name": "United States. Congress. Joint Committee on the Subject of the Public Printing"
+      },
+      {
+        "key": "/authors/OL4919933A",
+        "name": "United States. Congress. Joint Committee on Public Printing"
+      },
+      {
+        "key": "/authors/OL6978372A",
+        "name": "United States. Congress. House. Post Office"
+      },
+      {
+        "key": "/authors/OL7176166A",
+        "name": "United States. Congress"
+      },
+      {
+        "key": "/authors/OL7302243A",
+        "name": "Joint Committee on Printing"
+      },
+      {
+        "key": "/authors/OL7391423A",
+        "name": "United States. Congress 2009)"
+      },
+      {
+        "key": "/authors/OL827936A",
+        "name": "Paul Starkey"
+      },
+      {
+        "key": "/authors/OL5987883A",
+        "name": "United States Congress. Joint Committee on Printing"
+      },
+      {
+        "key": "/authors/OL5996228A",
+        "name": "United States Congress. Joint Committee on Printing "
+      },
+      {
+        "key": "/authors/OL5996229A",
+        "name": "Michael"
+      },
+      {
+        "key": "/authors/OL5996230A",
+        "name": "W. H"
+      },
+      {
+        "key": "/authors/OL5987882A",
+        "name": "W. H. Michael "
+      },
+      {
+        "key": "/authors/OL8004764A",
+        "name": "Joint Committee On Printing"
+      }
+    ],
+    "first_publish_year": 1861,
+    "ia": "congressionaldirunit",
+    "public_scan": true,
+    "has_fulltext": true,
+    "availability": {
+      "status": "open",
+      "available_to_browse": false,
+      "available_to_borrow": false,
+      "available_to_waitlist": false,
+      "is_printdisabled": false,
+      "is_readable": true,
+      "is_lendable": false,
+      "is_previewable": true,
+      "identifier": "congressionaldirunit",
+      "isbn": null,
+      "oclc": null,
+      "openlibrary_work": "OL16096464W",
+      "openlibrary_edition": "OL24992249M",
+      "last_loan_date": null,
+      "num_waitlist": null,
+      "last_waitlist_date": null,
+      "is_restricted": false,
+      "is_browseable": false,
+      "__src__": "core.models.lending.get_availability"
+    },
+    "status": "reading"
+  },
+  {
     "key": "/works/OL1001044W",
-    "title": "Henry Moore",
+    "title": "Henry Moore 2",
     "edition_count": 146,
     "cover_id": 1604103,
     "cover_edition_key": "OL8284011M",
@@ -9726,7 +9943,7 @@
         "name": "Ann Garrould"
       }
     ],
-    "first_publish_year": 1934,
+    "first_publish_year": "2060",
     "ia": "henrymoore00moor",
     "public_scan": false,
     "has_fulltext": true,
@@ -9751,80 +9968,9 @@
       "is_browseable": true,
       "__src__": "core.models.lending.get_availability"
     },
-    "status": "reading"
-  },
-  {
-    "key": "/works/OL1003017W",
-    "title": "Memórias póstumas de Brás Cubas",
-    "edition_count": 145,
-    "cover_id": 123152,
-    "cover_edition_key": "OL1004410M",
-    "subject": [
-      "Romance brasileiro",
-      "Continental european fiction (fictional works by one author)",
-      "Social life and customs",
-      "Dead",
-      "Fiction",
-      "Romance literature",
-      "Fiction, general",
-      "Autobiography",
-      "Ghost stories",
-      "Aristocracy (Social class)",
-      "FICTION / Classics",
-      "Classics",
-      "Architectural Decoration and ornament",
-      "Medieval Architecture",
-      "Architecture",
-      "Brazil, fiction",
-      "Interpersonal relations",
-      "Rich people"
-    ],
-    "ia_collection": [
-      "additional_collections",
-      "americana",
-      "clean_list",
-      "duke_libraries",
-      "inlibrary",
-      "internetarchivebooks",
-      "machado-de-assis",
-      "printdisabled",
-      "trent_university"
-    ],
-    "lendinglibrary": false,
-    "printdisabled": true,
-    "lending_edition": "OL28418913M",
-    "lending_identifier": "memoriasPostumasBrasCubas",
-    "authors": [
-      {
-        "key": "/authors/OL93286A",
-        "name": "Machado de Assis"
-      }
-    ],
-    "first_publish_year": 1900,
-    "ia": "memoriasPostumasBrasCubas",
-    "public_scan": true,
-    "has_fulltext": true,
-    "availability": {
-      "status": "open",
-      "available_to_browse": null,
-      "available_to_borrow": null,
-      "available_to_waitlist": null,
-      "is_printdisabled": null,
-      "is_readable": null,
-      "is_lendable": null,
-      "is_previewable": true,
-      "identifier": "memoriasPostumasBrasCubas",
-      "isbn": null,
-      "oclc": null,
-      "openlibrary_work": null,
-      "openlibrary_edition": null,
-      "last_loan_date": null,
-      "num_waitlist": null,
-      "last_waitlist_date": null,
-      "is_restricted": false,
-      "is_browseable": null,
-      "__src__": "core.models.lending.get_availability"
-    },
-    "status": "reading"
+    "status": "reading",
+    "author_names": [
+      "Henry "
+    ]
   }
 ]

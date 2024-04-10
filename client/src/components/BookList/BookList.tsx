@@ -33,7 +33,6 @@ const BooksList: React.FC = () => {
     };
   }
 
-  console.log(readingBooks);
 
   const isLoading =
     isReadingBooksLoading || isWantToReadBooksLoading || isReadBooksLoading;

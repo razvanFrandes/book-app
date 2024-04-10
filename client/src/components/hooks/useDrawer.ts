@@ -1,4 +1,3 @@
-// useDrawer.ts
 import useSWR from "swr";
 
 const useDrawer = () => {

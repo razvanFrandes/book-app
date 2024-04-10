@@ -26,7 +26,8 @@ function CategoryPage() {
   const handleBookAdd = async (book: any) => {
     try {
       await addBookToReadingList(book);
-      mutateReadingBooks();
+      // After adding the book, mutate the SWR data
+      mutateReadingBooks(); // Optionally, you can re-fetch or pass updated data directly
     } catch (error) {
       console.error("Failed to add book to reading list:", error);
     }
