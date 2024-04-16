@@ -1,13 +1,13 @@
 [
   {
     "key": "7ab831e3-0967-42da-9add-c1d344fa3088",
-    "title": "My book",
+    "title": "Test Book",
     "author_names": [
-      "Razvan"
+      "Razvan Frandes"
     ],
-    "first_publish_year": "20000",
+    "first_publish_year": "2000",
     "color": "#4fff84",
-    "status": "read"
+    "status": "reading"
   },
   {
     "key": "affd8ace-2f69-429d-bbea-263e5159c1a1",
@@ -85,7 +85,7 @@
       "/authors/OL224036A"
     ],
     "author_names": [
-      "2000"
+      "2005"
     ],
     "lending_edition_s": null,
     "edition_key": [
@@ -144,7 +144,7 @@
     ],
     "cover_id": 6424160,
     "cover_edition_key": "OL24274306M",
-    "status": "reading",
+    "status": "read",
     "first_publish_year": "Robert Green"
   },
   {
@@ -9642,6 +9642,136 @@
     "status": "reading"
   },
   {
+    "key": "/works/OL1001044W",
+    "title": "Henry Moore 2",
+    "edition_count": 146,
+    "cover_id": 1604103,
+    "cover_edition_key": "OL8284011M",
+    "subject": [
+      "Sculpture, British",
+      "Catalogues raisonnés",
+      "Mothers in art",
+      "Coal miners in art",
+      "Interviews",
+      "Modern Sculpture",
+      "Netherlands Otterlo",
+      "Art collections",
+      "Contributions in sculpture",
+      "Catalogs",
+      "British Sculpture",
+      "Pictorial works",
+      "Art, Modern",
+      "Sculpture, Modern",
+      "Henry Moore Foundation",
+      "Sculpture, English",
+      "English Sculpture",
+      "Sculptors",
+      "Sculpture",
+      "Human figure in art",
+      "Art",
+      "Exhibitions",
+      "Otterlo, Netherlands. Rijksmuseum Kröller-Müller",
+      "Air raid shelters in art",
+      "Sources",
+      "Modern Art",
+      "Artists' preparatory studies",
+      "Biography",
+      "Individual Artist",
+      "Moore, Henry,",
+      "England",
+      "Individual Photographers And Their Work",
+      "Architecture",
+      "Biography/Autobiography",
+      "General",
+      "Art / General",
+      "Moore, Henry",
+      "1898-1986",
+      "1898-",
+      "History of art & design styles: from c 1900 -",
+      "Individual artists",
+      "Sculpture & other three-dimensional art forms",
+      "c 1945 to c 1960",
+      "Individual Sculptors And Their Work",
+      "Art & Art Instruction",
+      "European",
+      "c 1980 to c 1990",
+      "Catalogues raisonnes",
+      "Drawing & drawings",
+      "Inter-war period, 1918-1939",
+      "Catalogues raisonnÃ¢es",
+      "20th Century Art",
+      "Drawing By Individual Artists",
+      "Techniques - Drawing",
+      "Catalogues raisonnâes",
+      "Catalogue d'exposition",
+      "Moore, henry, 1898-1986"
+    ],
+    "ia_collection": [
+      "inlibrary",
+      "internetarchivebooks",
+      "printdisabled"
+    ],
+    "lendinglibrary": false,
+    "printdisabled": true,
+    "lending_edition": "OL5601630M",
+    "lending_identifier": "henrymoore00moor",
+    "authors": [
+      {
+        "key": "/authors/OL4423513A",
+        "name": "David Sylvester"
+      },
+      {
+        "key": "/authors/OL92987A",
+        "name": "Henry Moore"
+      },
+      {
+        "key": "/authors/OL2866004A",
+        "name": "J. Hedgecoe"
+      },
+      {
+        "key": "/authors/OL581289A",
+        "name": "Alan Bowness"
+      },
+      {
+        "key": "/authors/OL117497A",
+        "name": "Herbert Edward Read"
+      },
+      {
+        "key": "/authors/OL955821A",
+        "name": "Ann Garrould"
+      }
+    ],
+    "first_publish_year": "2060",
+    "ia": "henrymoore00moor",
+    "public_scan": false,
+    "has_fulltext": true,
+    "availability": {
+      "status": "borrow_available",
+      "available_to_browse": true,
+      "available_to_borrow": false,
+      "available_to_waitlist": false,
+      "is_printdisabled": true,
+      "is_readable": false,
+      "is_lendable": true,
+      "is_previewable": true,
+      "identifier": "henrymoore00moor",
+      "isbn": null,
+      "oclc": null,
+      "openlibrary_work": "OL1001044W",
+      "openlibrary_edition": "OL5601630M",
+      "last_loan_date": null,
+      "num_waitlist": null,
+      "last_waitlist_date": null,
+      "is_restricted": true,
+      "is_browseable": true,
+      "__src__": "core.models.lending.get_availability"
+    },
+    "status": "reading",
+    "author_names": [
+      "Henry "
+    ]
+  },
+  {
     "key": "/works/OL430672W",
     "title": "Official Congressional Directory",
     "edition_count": 81,
@@ -9844,107 +9974,139 @@
     "status": "reading"
   },
   {
-    "key": "/works/OL1001044W",
-    "title": "Henry Moore 2",
-    "edition_count": 146,
-    "cover_id": 1604103,
-    "cover_edition_key": "OL8284011M",
+    "key": "/works/OL88638W",
+    "title": "The Seven Lamps of Architecture",
+    "edition_count": 76,
+    "cover_id": 5790382,
+    "cover_edition_key": "OL14041869M",
     "subject": [
-      "Sculpture, British",
-      "Catalogues raisonnés",
-      "Mothers in art",
-      "Coal miners in art",
-      "Interviews",
-      "Modern Sculpture",
-      "Netherlands Otterlo",
-      "Art collections",
-      "Contributions in sculpture",
-      "Catalogs",
-      "British Sculpture",
-      "Pictorial works",
-      "Art, Modern",
-      "Sculpture, Modern",
-      "Henry Moore Foundation",
-      "Sculpture, English",
-      "English Sculpture",
-      "Sculptors",
-      "Sculpture",
-      "Human figure in art",
-      "Art",
-      "Exhibitions",
-      "Otterlo, Netherlands. Rijksmuseum Kröller-Müller",
-      "Air raid shelters in art",
-      "Sources",
-      "Modern Art",
-      "Artists' preparatory studies",
-      "Biography",
-      "Individual Artist",
-      "Moore, Henry,",
-      "England",
-      "Individual Photographers And Their Work",
       "Architecture",
-      "Biography/Autobiography",
-      "General",
-      "Art / General",
-      "Moore, Henry",
-      "1898-1986",
-      "1898-",
-      "History of art & design styles: from c 1900 -",
-      "Individual artists",
-      "Sculpture & other three-dimensional art forms",
-      "c 1945 to c 1960",
-      "Individual Sculptors And Their Work",
-      "Art & Art Instruction",
-      "European",
-      "c 1980 to c 1990",
-      "Catalogues raisonnes",
-      "Drawing & drawings",
-      "Inter-war period, 1918-1939",
-      "Catalogues raisonnÃ¢es",
-      "20th Century Art",
-      "Drawing By Individual Artists",
-      "Techniques - Drawing",
-      "Catalogues raisonnâes",
-      "Catalogue d'exposition",
-      "Moore, henry, 1898-1986"
+      "Athena (Greek deity)",
+      "Conduct of life",
+      "Crystallography",
+      "Greek Art",
+      "Painting",
+      "Philosophy",
+      "Pre-Raphaelitism"
     ],
     "ia_collection": [
+      "americana",
+      "brigham_young_university",
+      "cdl",
+      "cornell",
+      "dartmouthlibrary-ol",
+      "europeanlibraries",
+      "getty",
       "inlibrary",
       "internetarchivebooks",
+      "kellylibrary",
+      "newyorkpubliclibrary",
+      "printdisabled",
+      "robarts",
+      "toronto"
+    ],
+    "lendinglibrary": false,
+    "printdisabled": true,
+    "lending_edition": "OL17839082M",
+    "lending_identifier": "sevenlampsofarch00rusk_1",
+    "authors": [
+      {
+        "key": "/authors/OL20108A",
+        "name": "John Ruskin"
+      }
+    ],
+    "first_publish_year": 1800,
+    "ia": "sevenlampsofarch00rusk_1",
+    "public_scan": true,
+    "has_fulltext": true,
+    "availability": {
+      "status": "open",
+      "available_to_browse": false,
+      "available_to_borrow": false,
+      "available_to_waitlist": false,
+      "is_printdisabled": false,
+      "is_readable": true,
+      "is_lendable": false,
+      "is_previewable": true,
+      "identifier": "sevenlampsofarch00rusk_1",
+      "isbn": null,
+      "oclc": null,
+      "openlibrary_work": "OL88638W",
+      "openlibrary_edition": "OL17839082M",
+      "last_loan_date": null,
+      "num_waitlist": null,
+      "last_waitlist_date": null,
+      "is_restricted": false,
+      "is_browseable": false,
+      "__src__": "core.models.lending.get_availability"
+    },
+    "status": "reading"
+  },
+  {
+    "key": "/works/OL15210196W",
+    "title": "Le Corbusier",
+    "edition_count": 72,
+    "cover_id": 2258962,
+    "cover_edition_key": "OL9723041M",
+    "subject": [
+      "Correspondence",
+      "Sketch-books",
+      "Villa Savoye",
+      "Catalogs",
+      "Exhibitions",
+      "Centre Le Corbusier Heidi Weber Museum",
+      "Journeys",
+      "Travel",
+      "Criticism and interpretation",
+      "Modern Architecture",
+      "Architects",
+      "Art collections",
+      "San Francisco Museum of Art",
+      "Functionalism (Architecture)",
+      "City planning",
+      "Art",
+      "Notebooks, sketchbooks",
+      "International style (Architecture)",
+      "Architecture",
+      "Le corbusier, 1887-1965",
+      "Architecture, france",
+      "Architecture, europe",
+      "Architecture, modern, 20th century",
+      "Voyages",
+      "Catalogues",
+      "Notes, esquisses",
+      "Galerie Denise René",
+      "Adaptive Reuse & Renovation",
+      "Buildings",
+      "Landmarks & Monuments",
+      "Professional Practice",
+      "Reference",
+      "History",
+      "Contributions in art",
+      "Architects as artists",
+      "In art",
+      "Le corbusier , 1887-1965",
+      "Nc248.j4 a4 2006"
+    ],
+    "ia_collection": [
+      "americana",
+      "inlibrary",
+      "internetarchivebooks",
+      "marygrovecollege",
       "printdisabled"
     ],
     "lendinglibrary": false,
     "printdisabled": true,
-    "lending_edition": "OL5601630M",
-    "lending_identifier": "henrymoore00moor",
+    "lending_edition": "OL6027601M",
+    "lending_identifier": "lecorbusierarchi0000leco",
     "authors": [
       {
-        "key": "/authors/OL4423513A",
-        "name": "David Sylvester"
-      },
-      {
-        "key": "/authors/OL92987A",
-        "name": "Henry Moore"
-      },
-      {
-        "key": "/authors/OL2866004A",
-        "name": "J. Hedgecoe"
-      },
-      {
-        "key": "/authors/OL581289A",
-        "name": "Alan Bowness"
-      },
-      {
-        "key": "/authors/OL117497A",
-        "name": "Herbert Edward Read"
-      },
-      {
-        "key": "/authors/OL955821A",
-        "name": "Ann Garrould"
+        "key": "/authors/OL27962A",
+        "name": "Le Corbusier"
       }
     ],
-    "first_publish_year": "2060",
-    "ia": "henrymoore00moor",
+    "first_publish_year": 1938,
+    "ia": "lecorbusierarchi0000leco",
     "public_scan": false,
     "has_fulltext": true,
     "availability": {
@@ -9956,11 +10118,11 @@
       "is_readable": false,
       "is_lendable": true,
       "is_previewable": true,
-      "identifier": "henrymoore00moor",
+      "identifier": "lecorbusierarchi0000leco",
       "isbn": null,
       "oclc": null,
-      "openlibrary_work": "OL1001044W",
-      "openlibrary_edition": "OL5601630M",
+      "openlibrary_work": "OL15210196W",
+      "openlibrary_edition": "OL6027601M",
       "last_loan_date": null,
       "num_waitlist": null,
       "last_waitlist_date": null,
@@ -9968,9 +10130,225 @@
       "is_browseable": true,
       "__src__": "core.models.lending.get_availability"
     },
-    "status": "reading",
-    "author_names": [
-      "Henry "
-    ]
+    "status": "reading"
+  },
+  {
+    "key": "/works/OL88640W",
+    "title": "The Stones of Venice",
+    "edition_count": 99,
+    "cover_id": 8239410,
+    "cover_edition_key": "OL24197185M",
+    "subject": [
+      "Venice",
+      "Byzantine Architecture",
+      "Art",
+      "Description",
+      "Philosophy",
+      "Gothic Architecture",
+      "Description and travel",
+      "Architecture",
+      "Architecture and society",
+      "Details",
+      "Art, history",
+      "Architecture, history",
+      "Architecture, italy",
+      "Art, italian",
+      "Architecture, renaissance",
+      "Venice (italy), description and travel",
+      "Buildings, structures",
+      "Buildings"
+    ],
+    "ia_collection": [
+      "Wellesley_College_Library",
+      "americana",
+      "blc",
+      "cdl",
+      "cua-ol",
+      "europeanlibraries",
+      "gwulibraries-ol",
+      "inlibrary",
+      "internetarchivebooks",
+      "kellylibrary",
+      "newyorkpubliclibrary",
+      "openlibrary-d-ol",
+      "printdisabled",
+      "robarts",
+      "smithsonian",
+      "toronto",
+      "udc-ol"
+    ],
+    "lendinglibrary": false,
+    "printdisabled": true,
+    "lending_edition": "OL24197185M",
+    "lending_identifier": "stonesofvenicev200rusk",
+    "authors": [
+      {
+        "key": "/authors/OL20108A",
+        "name": "John Ruskin"
+      }
+    ],
+    "first_publish_year": 1851,
+    "ia": "stonesofvenicev200rusk",
+    "public_scan": true,
+    "has_fulltext": true,
+    "availability": {
+      "status": "open",
+      "available_to_browse": false,
+      "available_to_borrow": false,
+      "available_to_waitlist": false,
+      "is_printdisabled": false,
+      "is_readable": true,
+      "is_lendable": false,
+      "is_previewable": true,
+      "identifier": "stonesofvenicev200rusk",
+      "isbn": null,
+      "oclc": null,
+      "openlibrary_work": "OL88640W",
+      "openlibrary_edition": "OL24197185M",
+      "last_loan_date": null,
+      "num_waitlist": null,
+      "last_waitlist_date": null,
+      "is_restricted": false,
+      "is_browseable": false,
+      "__src__": "core.models.lending.get_availability"
+    },
+    "status": "reading"
+  },
+  {
+    "key": "/works/OL518262W",
+    "title": "Frotiers Peace Treaties, and International Organization",
+    "edition_count": 114,
+    "cover_id": 4703873,
+    "cover_edition_key": "OL22095319M",
+    "subject": [
+      "Catalogues raisonnés",
+      "Correspondence",
+      "Catalogs",
+      "Exhibitions",
+      "Dutch Painting",
+      "Painters",
+      "Art collections",
+      "Impressionism (Art)",
+      "Drawing",
+      "Biography",
+      "Law and legislation",
+      "Transportation",
+      "Drawing & drawings",
+      "Individual artists",
+      "Art",
+      "Art & Art Instruction",
+      "Collections, Catalogs, Exhibitions - General",
+      "History - General",
+      "Individual Artist",
+      "Art / Individual Artist",
+      "1853-1890",
+      "Gogh, Vincent van,",
+      "Impressionism",
+      "Painting & paintings",
+      "Post-Impressionism",
+      "Individual Painters - 19th Century",
+      "Architecture",
+      "Netherlands",
+      "General",
+      "c 1800 to c 1900",
+      "Gogh, vincent van, 1853-1890",
+      "Dutch Landscape painting",
+      "Drawing, exhibitions",
+      "Painters, netherlands",
+      "Landscapes in art",
+      "Art criticism"
+    ],
+    "ia_collection": [
+      "americana",
+      "americanuniversity-ol",
+      "belmont-ol",
+      "binghamton-ol",
+      "cua-ol",
+      "dartmouthlibrary-ol",
+      "drakeuniversity-ol",
+      "gwulibraries-ol",
+      "inlibrary",
+      "internetarchivebooks",
+      "johnshopkins-ol",
+      "kalamazoocollege-ol",
+      "pma-ol",
+      "printdisabled",
+      "riceuniversity-ol",
+      "rochester-ol",
+      "trent_university",
+      "tulsacc-ol",
+      "uni-ol",
+      "universityofcoloradoboulder-ol",
+      "universityofoklahoma-ol",
+      "wilsoncollege-ol"
+    ],
+    "lendinglibrary": false,
+    "printdisabled": true,
+    "lending_edition": "OL23247314M",
+    "lending_identifier": "vincentvangoghco0000gogh",
+    "authors": [
+      {
+        "key": "/authors/OL36119A",
+        "name": "Vincent van Gogh"
+      },
+      {
+        "key": "/authors/OL2937773A",
+        "name": "Colta Ives"
+      },
+      {
+        "key": "/authors/OL81305A",
+        "name": "Sjraar van Heugten"
+      },
+      {
+        "key": "/authors/OL2916849A",
+        "name": "Marije Vellekoop"
+      },
+      {
+        "key": "/authors/OL480054A",
+        "name": "Ingo F. Walther"
+      },
+      {
+        "key": "/authors/OL413247A",
+        "name": "Rainer Metzger"
+      },
+      {
+        "key": "/authors/OL608215A",
+        "name": "Louis van Tilborgh"
+      },
+      {
+        "key": "/authors/OL2750291A",
+        "name": "Johannes von Uitert"
+      },
+      {
+        "key": "/authors/OL28600A",
+        "name": "Schapiro, Meyer"
+      }
+    ],
+    "first_publish_year": 1914,
+    "ia": "vincentvangoghco0000gogh",
+    "public_scan": false,
+    "has_fulltext": true,
+    "availability": {
+      "status": "borrow_available",
+      "available_to_browse": true,
+      "available_to_borrow": true,
+      "available_to_waitlist": false,
+      "is_printdisabled": true,
+      "is_readable": false,
+      "is_lendable": true,
+      "is_previewable": true,
+      "identifier": "vincentvangoghco0000gogh",
+      "isbn": "3822896438",
+      "oclc": null,
+      "openlibrary_work": "OL518262W",
+      "openlibrary_edition": "OL23247314M",
+      "last_loan_date": null,
+      "num_waitlist": null,
+      "last_waitlist_date": null,
+      "is_restricted": true,
+      "is_browseable": true,
+      "__src__": "core.models.lending.get_availability"
+    },
+    "status": "reading"
   }
 ]

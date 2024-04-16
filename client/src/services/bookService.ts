@@ -101,7 +101,6 @@ export const deleteBook = async (bookId: string) => {
 };
 
 export const editBook = async (book: Book) => {
-  console.log('caca')
   try {
     await axios.put(`${API_BASE_URL}/api/books/edit`, book);
     mutate(`${API_BASE_URL}/api/books/reading`);
