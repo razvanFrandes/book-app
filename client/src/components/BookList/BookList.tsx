@@ -8,7 +8,7 @@ import {
   CircularProgress,
 } from "@mui/material";
 import BookListItem from "./BookListItem";
-import { BooksListProps } from "../../types/BookTypes";
+import { BooksListProps, Book } from "../../types/BookTypes";
 import {
   useReadingBooks,
   useWantToReadBooks,
@@ -32,7 +32,6 @@ const BooksList: React.FC = () => {
       "aria-controls": `book-tabpanel-${index}`,
     };
   }
-
 
   const isLoading =
     isReadingBooksLoading || isWantToReadBooksLoading || isReadBooksLoading;
@@ -74,7 +73,7 @@ const BooksList: React.FC = () => {
         {readingBooks && readingBooks.length > 0 ? (
           tabIndex === 0 && (
             <Box sx={{ my: 1 }}>
-              {readingBooks.map((book: any) => (
+              {readingBooks.map((book: Book) => (
                 <BookListItem
                   key={book.key + book.title}
                   book={book}
@@ -91,7 +90,7 @@ const BooksList: React.FC = () => {
         {wantToReadBooks && wantToReadBooks.length > 0 ? (
           tabIndex === 1 && (
             <Box sx={{ my: 1 }}>
-              {wantToReadBooks.map((book: any) => (
+              {wantToReadBooks.map((book: Book) => (
                 <BookListItem
                   key={book.key + book.title}
                   book={book}
@@ -107,7 +106,7 @@ const BooksList: React.FC = () => {
         )}
         {readBooks && readBooks.length > 0 && tabIndex === 2 && (
           <Box sx={{ my: 1 }}>
-            {readBooks.map((book: any) => (
+            {readBooks.map((book: Book) => (
               <BookListItem
                 key={book.key + book.title}
                 book={book}

@@ -1,7 +1,3 @@
-export interface AutorNames {
-  name: string;
-}
-
 export interface Authors {
   name: string;
 }

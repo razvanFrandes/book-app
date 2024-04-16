@@ -10,6 +10,7 @@ import {
   useReadingBooks,
 } from "../../../services/bookService";
 import { AddBox, Delete, PlusOne } from "@mui/icons-material";
+import { Book } from "../../../types/BookTypes";
 
 const fetcher = (url: string) => axios.get(url).then((res) => res.data);
 
@@ -23,7 +24,7 @@ function CategoryPage() {
   );
   const { readingBooks, mutate: mutateReadingBooks } = useReadingBooks();
 
-  const handleBookAdd = async (book: any) => {
+  const handleBookAdd = async (book: Book) => {
     try {
       await addBookToReadingList(book);
       // After adding the book, mutate the SWR data
@@ -94,7 +95,7 @@ function CategoryPage() {
             }}
           />
         )}
-        {books?.works.map((book: any) => (
+        {books?.works.map((book: Book) => (
           <Grid
             item
             key={book.key + book.title}
