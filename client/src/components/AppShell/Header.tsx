@@ -1,10 +1,10 @@
 // Header.tsx
-import React from "react";
+import React, { FC, ReactElement } from "react";
 import { AppBar, Toolbar, IconButton, Typography } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import useDrawer from "./../hooks/useDrawer";
 
-const Header: React.FC = () => {
+const Header: FC = (): ReactElement => {
   const { toggleDrawer } = useDrawer();
 
   return (

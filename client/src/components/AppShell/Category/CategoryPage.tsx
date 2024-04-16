@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC, ReactElement } from "react";
 import { useParams, Link } from "react-router-dom";
 import useSWR from "swr";
 import axios from "axios";
@@ -9,12 +9,12 @@ import {
   deleteBook,
   useReadingBooks,
 } from "../../../services/bookService";
-import { AddBox, Delete, PlusOne } from "@mui/icons-material";
+import { AddBox, Delete } from "@mui/icons-material";
 import { Book } from "../../../types/BookTypes";
 
 const fetcher = (url: string) => axios.get(url).then((res) => res.data);
 
-function CategoryPage() {
+const CategoryPage: FC = (): ReactElement => {
   const { subcategorySlug } = useParams<{ subcategorySlug: string }>();
   const { data: books, error } = useSWR(
     subcategorySlug
@@ -208,6 +208,6 @@ function CategoryPage() {
       </Grid>
     </Box>
   );
-}
+};
 
 export default CategoryPage;

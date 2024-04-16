@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, FC, ReactElement } from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import axios from "axios";
 import { Category } from "../../types/CategoryTypes";
@@ -15,7 +15,7 @@ import CategoryPage from "./Category/CategoryPage";
 import { API_BASE_URL } from "./../../utils/constants";
 import Header from "./Header";
 
-function Main() {
+const Main: FC = (): ReactElement => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -138,6 +138,6 @@ function Main() {
       </div>
     </>
   );
-}
+};
 
 export default Main;

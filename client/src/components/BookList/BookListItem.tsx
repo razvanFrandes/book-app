@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, FC, ReactElement } from "react";
 import {
   Box,
   Typography,
@@ -30,7 +30,10 @@ const validationSchema = Yup.object({
   first_publish_year: Yup.string().required("First publish year is required"),
 });
 
-const BookListItem: React.FC<BookListItemProps> = ({ book, tabIndex }) => {
+const BookListItem: FC<BookListItemProps> = ({
+  book,
+  tabIndex,
+}): ReactElement => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [editBookDialogOpen, setEditBookDialogOpen] = useState(false);
   const updateBookStatus = useUpdateBookStatus();

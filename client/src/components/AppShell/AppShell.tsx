@@ -1,10 +1,10 @@
 // AppShell.tsx
-import React from "react";
+import React, { FC, ReactElement } from "react";
 import { Box, CssBaseline } from "@mui/material";
 import Sidebar from "./Sidebar";
 import Main from "./Main";
 
-const AppShell: React.FC = () => {
+const AppShell: FC = (): ReactElement => {
   return (
     <Box sx={{ display: "flex", minHeight: "100vh", bgcolor: "#000" }}>
       <CssBaseline />

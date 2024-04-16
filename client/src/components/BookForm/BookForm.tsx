@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, FC, ReactElement } from "react";
 import {
   Box,
   Typography,
@@ -14,7 +14,7 @@ import * as Yup from "yup";
 import { addBook } from "./../../services/bookService";
 import { Book } from "../../types/BookTypes";
 
-function BookForm() {
+const BookForm: FC = (): ReactElement => {
   const [openDialog, setOpenDialog] = useState(false);
 
   const handleOpenDialog = () => {
@@ -136,6 +136,6 @@ function BookForm() {
       </Dialog>
     </Box>
   );
-}
+};
 
 export default BookForm;

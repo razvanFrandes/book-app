@@ -1,5 +1,5 @@
 // Sidebar.tsx
-import React from "react";
+import React, { FC, ReactElement } from "react";
 import { Drawer, Box, useMediaQuery, Theme, IconButton } from "@mui/material";
 import BookList from "./../BookList/BookList";
 import BookForm from "../BookForm/BookForm";
@@ -8,7 +8,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 const drawerWidth = 400;
 
-const Sidebar: React.FC = () => {
+const Sidebar: FC = (): ReactElement => {
   const { open, toggleDrawer } = useDrawer();
   const isDesktop = useMediaQuery((theme: Theme) => theme.breakpoints.up("md"));
 

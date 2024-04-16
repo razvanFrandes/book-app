@@ -1,7 +1,7 @@
-import React from "react";
+import React, { FC, ReactElement } from "react";
 import { Box, Typography } from "@mui/material";
 
-const Footer: React.FC = () => {
+const Footer: FC = (): ReactElement => {
   return (
     <Box
       component="footer"

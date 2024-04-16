@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, FC, ReactElement } from "react";
 import {
   Box,
   List,
@@ -15,7 +15,7 @@ import {
   useReadBooks,
 } from "../../services/bookService";
 
-const BooksList: React.FC = () => {
+const BooksList: FC = (): ReactElement => {
   const [tabIndex, setTabIndex] = useState(0);
   const { readingBooks, isLoading: isReadingBooksLoading } = useReadingBooks();
   const { wantToReadBooks, isLoading: isWantToReadBooksLoading } =
