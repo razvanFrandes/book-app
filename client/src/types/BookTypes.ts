@@ -7,17 +7,9 @@ export interface Book {
   title: string;
   cover_id?: string;
   color: string;
-  author_names: string | undefined;
+  author_names?: string;
   authors: Authors[];
   first_publish_year: string;
-}
-
-export interface BooksListProps {
-  books: {
-    readingBooks: Book[];
-    wantToReadBooks: Book[];
-    readBooks: Book[];
-  };
 }
 
 export interface BookListItemProps {

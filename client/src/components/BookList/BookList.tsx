@@ -8,7 +8,7 @@ import {
   CircularProgress,
 } from "@mui/material";
 import BookListItem from "./BookListItem";
-import { BooksListProps, Book } from "../../types/BookTypes";
+import { Book } from "../../types/BookTypes";
 import {
   useReadingBooks,
   useWantToReadBooks,
